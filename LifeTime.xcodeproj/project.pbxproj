@@ -13,6 +13,9 @@
 		1FFDBD2A21B0AA84002C2074 /* LifeTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDBD2821B0AA84002C2074 /* LifeTime.xcdatamodeld */; };
 		1FFDBD2C21B0AA85002C2074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FFDBD2B21B0AA85002C2074 /* Assets.xcassets */; };
 		1FFDBD2F21B0AA85002C2074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FFDBD2D21B0AA85002C2074 /* LaunchScreen.storyboard */; };
+		1FFDBD3721B2C0F9002C2074 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDBD3621B2C0F9002C2074 /* Constants.swift */; };
+		1FFDBD3921B2CCE4002C2074 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDBD3821B2CCE4002C2074 /* TimeViewController.swift */; };
+		D38513F9A8F4E25F0D9724E1 /* Pods_LifeTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04BD45D1AF90944B1C5D57A /* Pods_LifeTime.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,11 @@
 		1FFDBD2B21B0AA85002C2074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FFDBD2E21B0AA85002C2074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FFDBD3021B0AA85002C2074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FFDBD3621B2C0F9002C2074 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1FFDBD3821B2CCE4002C2074 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
+		901259285D9CCB0BE0AD5C87 /* Pods-LifeTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-LifeTime/Pods-LifeTime.release.xcconfig"; sourceTree = "<group>"; };
+		B04BD45D1AF90944B1C5D57A /* Pods_LifeTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LifeTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDD4F249F2A2B3E9F476C92A /* Pods-LifeTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LifeTime/Pods-LifeTime.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38513F9A8F4E25F0D9724E1 /* Pods_LifeTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				1FFDBD2021B0AA84002C2074 /* LifeTime */,
 				1FFDBD1F21B0AA84002C2074 /* Products */,
+				7332C0FCFA510E0125722D57 /* Pods */,
+				D25B802FBA8D451FB38C63B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +69,32 @@
 			children = (
 				1FFDBD2121B0AA84002C2074 /* AppDelegate.swift */,
 				1FFDBD2321B0AA84002C2074 /* ViewController.swift */,
+				1FFDBD3821B2CCE4002C2074 /* TimeViewController.swift */,
 				1FFDBD2521B0AA84002C2074 /* Main.storyboard */,
 				1FFDBD2B21B0AA85002C2074 /* Assets.xcassets */,
 				1FFDBD2D21B0AA85002C2074 /* LaunchScreen.storyboard */,
 				1FFDBD3021B0AA85002C2074 /* Info.plist */,
 				1FFDBD2821B0AA84002C2074 /* LifeTime.xcdatamodeld */,
+				1FFDBD3621B2C0F9002C2074 /* Constants.swift */,
 			);
 			path = LifeTime;
+			sourceTree = "<group>";
+		};
+		7332C0FCFA510E0125722D57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EDD4F249F2A2B3E9F476C92A /* Pods-LifeTime.debug.xcconfig */,
+				901259285D9CCB0BE0AD5C87 /* Pods-LifeTime.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D25B802FBA8D451FB38C63B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B04BD45D1AF90944B1C5D57A /* Pods_LifeTime.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FFDBD3321B0AA85002C2074 /* Build configuration list for PBXNativeTarget "LifeTime" */;
 			buildPhases = (
+				11B6ED8132CBA67746BEF6EF /* [CP] Check Pods Manifest.lock */,
 				1FFDBD1A21B0AA84002C2074 /* Sources */,
 				1FFDBD1B21B0AA84002C2074 /* Frameworks */,
 				1FFDBD1C21B0AA84002C2074 /* Resources */,
+				375A7929F5180D77DA9AD4BC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -99,6 +131,7 @@
 				TargetAttributes = {
 					1FFDBD1D21B0AA84002C2074 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -133,14 +166,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11B6ED8132CBA67746BEF6EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LifeTime-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		375A7929F5180D77DA9AD4BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LifeTime/Pods-LifeTime-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LifeTime/Pods-LifeTime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1FFDBD1A21B0AA84002C2074 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1FFDBD2A21B0AA84002C2074 /* LifeTime.xcdatamodeld in Sources */,
+				1FFDBD3921B2CCE4002C2074 /* TimeViewController.swift in Sources */,
 				1FFDBD2421B0AA84002C2074 /* ViewController.swift in Sources */,
 				1FFDBD2221B0AA84002C2074 /* AppDelegate.swift in Sources */,
+				1FFDBD3721B2C0F9002C2074 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,8 +358,10 @@
 		};
 		1FFDBD3421B0AA85002C2074 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDD4F249F2A2B3E9F476C92A /* Pods-LifeTime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KW8SJTE798;
 				INFOPLIST_FILE = LifeTime/Info.plist;
@@ -295,6 +371,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kkxx.LifeTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LifeTime/LifeTime-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,8 +380,10 @@
 		};
 		1FFDBD3521B0AA85002C2074 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 901259285D9CCB0BE0AD5C87 /* Pods-LifeTime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KW8SJTE798;
 				INFOPLIST_FILE = LifeTime/Info.plist;
@@ -313,6 +393,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kkxx.LifeTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LifeTime/LifeTime-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
