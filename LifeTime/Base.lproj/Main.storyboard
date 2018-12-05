@@ -18,24 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_start_bg" translatesAutoresizingMaskIntoConstraints="NO" id="TFx-V9-e7m">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_start_bg" translatesAutoresizingMaskIntoConstraints="NO" id="TFx-V9-e7m">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hb2-kw-yPB">
-                                <rect key="frame" x="0.0" y="225" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.082195251289999993" green="0.35350264469999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <date key="date" timeIntervalSinceReferenceDate="565356944.02771795">
-                                    <!--2018-12-01 11:35:44 +0000-->
-                                </date>
-                                <connections>
-                                    <action selector="dateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="23u-tc-aTz"/>
-                                </connections>
-                            </datePicker>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KgL-AN-360">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgL-AN-360">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="Title" id="OaS-dB-Lo9">
@@ -47,14 +34,50 @@
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="uIn-DV-zVu">
                                             <connections>
                                                 <action selector="finishSelectDateAction:" destination="BYZ-38-t0r" id="Sgb-9R-kxW"/>
-                                                <segue destination="Lkw-Zi-29c" kind="show" id="HRn-md-KZe"/>
+                                                <segue destination="Lkw-Zi-29c" kind="show" identifier="goToTimeViewScreen" id="I9b-2U-rcB"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWt-lZ-uzi">
+                                <rect key="frame" x="16" y="233" width="343" height="201"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hb2-kw-yPB">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="201"/>
+                                        <color key="backgroundColor" white="1" alpha="0.16449058219178081" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="565356944.02771795">
+                                            <!--2018-12-01 11:35:44 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="dateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="23u-tc-aTz"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.16350064212328766" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="hb2-kw-yPB" secondAttribute="bottom" id="DB8-qK-t6P"/>
+                                    <constraint firstItem="hb2-kw-yPB" firstAttribute="top" secondItem="oWt-lZ-uzi" secondAttribute="top" id="Xnj-3B-IhA"/>
+                                    <constraint firstItem="hb2-kw-yPB" firstAttribute="leading" secondItem="oWt-lZ-uzi" secondAttribute="leading" id="czQ-KL-3VT"/>
+                                    <constraint firstAttribute="trailing" secondItem="hb2-kw-yPB" secondAttribute="trailing" id="xOS-h0-BGw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oWt-lZ-uzi" firstAttribute="top" secondItem="KgL-AN-360" secondAttribute="bottom" constant="169" id="78e-eb-K5C"/>
+                            <constraint firstItem="oWt-lZ-uzi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7lt-1D-TaL"/>
+                            <constraint firstItem="oWt-lZ-uzi" firstAttribute="centerX" secondItem="TFx-V9-e7m" secondAttribute="centerX" id="DWF-vx-h6B"/>
+                            <constraint firstItem="TFx-V9-e7m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IIw-sN-U9y"/>
+                            <constraint firstItem="oWt-lZ-uzi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="233" id="LlF-9o-Le6"/>
+                            <constraint firstItem="TFx-V9-e7m" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Omr-Tp-r1N"/>
+                            <constraint firstItem="TFx-V9-e7m" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="amz-Sy-Rz0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oWt-lZ-uzi" secondAttribute="trailing" constant="16" id="gge-5Z-Sm1"/>
+                            <constraint firstItem="TFx-V9-e7m" firstAttribute="leading" secondItem="KgL-AN-360" secondAttribute="leading" id="iE5-GJ-JqJ"/>
+                            <constraint firstItem="TFx-V9-e7m" firstAttribute="trailing" secondItem="KgL-AN-360" secondAttribute="trailing" id="pCb-Lq-cSd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oWt-lZ-uzi" secondAttribute="bottom" constant="233" id="s1c-Nc-vfq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -63,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2271.1999999999998" y="53.523238380809602"/>
+            <point key="canvasLocation" x="-2847" y="54"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="2oE-Q0-6Hq">
@@ -94,15 +117,15 @@
             </objects>
             <point key="canvasLocation" x="97" y="54"/>
         </scene>
-        <!--View Controller-->
+        <!--Time View Controller-->
         <scene sceneID="gkg-C8-bgc">
             <objects>
-                <viewController id="Lkw-Zi-29c" sceneMemberID="viewController">
+                <viewController id="Lkw-Zi-29c" customClass="TimeViewController" customModule="LifeTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bbQ-jm-7g8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_time_bg_1080_1920" translatesAutoresizingMaskIntoConstraints="NO" id="5p6-hg-4zO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_time_bg_1080_1920" translatesAutoresizingMaskIntoConstraints="NO" id="5p6-hg-4zO" customClass="Time">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFI-B5-LJc">
@@ -247,9 +270,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zv6-bg-B3o" userLabel="Bottom View">
                                         <rect key="frame" x="0.0" y="56.5" width="343" height="56.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Nmu-Sz-Qy4">
-                                                <rect key="frame" x="0.0" y="0.0" width="343.5" height="56.5"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Nmu-Sz-Qy4">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="56.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4f-xX-baK">
                                                         <rect key="frame" x="0.0" y="0.0" width="114.5" height="56.5"/>
@@ -281,16 +303,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amR-cG-aL2">
-                                                        <rect key="frame" x="114.5" y="0.0" width="114.5" height="56.5"/>
+                                                        <rect key="frame" x="114.5" y="0.0" width="114" height="56.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knO-XQ-djH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="28.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="114" height="28.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0Y-Rm-69K">
-                                                                <rect key="frame" x="0.0" y="28.5" width="114.5" height="28"/>
+                                                                <rect key="frame" x="0.0" y="28.5" width="114" height="28"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -310,7 +332,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giy-Yx-VrD">
-                                                        <rect key="frame" x="229" y="0.0" width="114.5" height="56.5"/>
+                                                        <rect key="frame" x="228.5" y="0.0" width="114.5" height="56.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMP-A7-JN2">
                                                                 <rect key="frame" x="0.0" y="0.0" width="114.5" height="28.5"/>
@@ -342,6 +364,12 @@
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Nmu-Sz-Qy4" secondAttribute="bottom" id="3iX-FR-BDY"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nmu-Sz-Qy4" secondAttribute="trailing" id="puX-Cm-hlm"/>
+                                            <constraint firstItem="Nmu-Sz-Qy4" firstAttribute="top" secondItem="Zv6-bg-B3o" secondAttribute="top" id="qTs-eF-mib"/>
+                                            <constraint firstItem="Nmu-Sz-Qy4" firstAttribute="leading" secondItem="Zv6-bg-B3o" secondAttribute="leading" id="rKI-u2-Ou8"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>

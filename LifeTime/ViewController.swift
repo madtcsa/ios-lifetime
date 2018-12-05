@@ -17,20 +17,29 @@ class ViewController: UIViewController,UIPickerViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        let str = self.appDefaults.string(forKey: Constants.init().userBirthDayStrKey)
+        print(str!)
+        if nil != self.appDefaults.string(forKey: Constants.init().userBirthDayStrKey){
+            let timeView = TimeViewController()
+            print("performSegue")
+            self.performSegue(withIdentifier: "goToTimeViewScreen", sender: self)
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     
     @IBAction func dateChanged(_ sender: UIDatePicker) {
         print("date changed")
-        saveUserBirthDay()
+
     }
     
     private func saveUserBirthDay(){
         let date = birthDay.date
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy年MM月dd日"
+        dateFormatter.dateFormat = "yyyy/MM/dd"
         print(dateFormatter.string(from: date))
+        self.appDefaults.set(dateFormatter.string(from: date), forKey: Constants.init().userBirthDayStrKey)
+        self.appDefaults.set(Int(date.timeIntervalSince1970), forKey: Constants.init().userBirthDayKey)
         dateFormatter.dateFormat = "yyyy"
         let yearStr = dateFormatter.string(from: date)
         self.appDefaults.set(Int(yearStr), forKey: Constants.init().userBirthDayYear)
@@ -48,7 +57,8 @@ class ViewController: UIViewController,UIPickerViewDelegate{
         
     }
     @IBAction func finishSelectDateAction(_ sender: UIBarButtonItem) {
-        
+        performSegue(withIdentifier: "goToTimeViewScreen", sender: self)
+        saveUserBirthDay()
     }
 }
 
